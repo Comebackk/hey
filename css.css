@@ -23,10 +23,15 @@ header {
 }
 
 header .logo {
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
 }
+.logo-img {
+  height: 60px;       /* ajuste o tamanho conforme necessário */
+  width: auto;        /* mantém proporção */
+  display: block;
+}
+
 
 nav ul {
   list-style: none;
@@ -47,20 +52,72 @@ nav a:hover {
 
 /* Banner */
 .banner {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.banner-img.active {
+  opacity: 1;
+}
+
+/* Setas */
+.banner button.prev,
+.banner button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.banner button.prev { left: 20px; }
+.banner button.next { right: 20px; }
+
+.banner button:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Texto sobreposto */
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-.banner h1 {
-  font-size: 3.5em;
-  margin-bottom: 15px;
+.banner-text h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
-.banner p {
-  font-size: 1.3em;
-  color: #f1f1f1;
+.banner-text p {
+  font-size: 1.5em;
 }
 
 /* Produtos */
@@ -75,30 +132,6 @@ nav a:hover {
   margin-bottom: 30px;
   font-size: 2.5em;
   color: #222;
-}
-
-/* Botões de filtro */
-.filter-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 40px;
-}
-
-.filter-buttons button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  background: #ddd;
-  cursor: pointer;
-  font-size: 1em;
-  transition: all 0.3s ease;
-}
-
-.filter-buttons button:hover,
-.filter-buttons .active {
-  background: #2c3e50;
-  color: #fff;
 }
 
 /* Cards */
@@ -196,32 +229,3 @@ footer {
 footer p + p {
   margin-top: 8px;
 }
-
-.banner {
-  position: relative;               /* permite posicionar texto sobre a imagem */
-  background: url('heyheyehy.jpg') center/cover no-repeat;
-  height: 500px;                    /* altura do banner; ajuste como quiser */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;          /* centraliza verticalmente */
-  align-items: center;              /* centraliza horizontalmente */
-  color: #fff;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.banner h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* sombra para melhor leitura */
-}
-
-.banner p {
-  font-size: 1.5em;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-#bannerh1{
-  color: #7d0505;
-}
-
-

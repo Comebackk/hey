@@ -3,35 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produto - ETAM</title>
+  <title>ETAM - Catálogo</title>
   <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <header>
-  <div class="logo"><a href="index.html" class="logo">ETAM</a>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.jpg" alt="ETAM" class="logo-img">
+    </a>
+  </div>
   <nav>
     <ul>
-      <li><a href="index.html#produtos">Catálogo</a></li>
-      <li><a href="index.html#sobre">Sobre</a></li>
-      <li><a href="index.html#contato">Contato</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="banner">
-  <h1 id="produto-nome">Produto</h1>
-  <p id="produto-desc">Descrição do produto</p>
+<!-- Banner estilo Milliken -->
+<section class="banner" id="top">
+  <div class="banner-slider">
+    <img src="heyheyehy.jpg" class="banner-img">
+    <img src="02.jpg" class="banner-img">
+    <img src="03.jpg" class="banner-img">
+
+    <!-- Texto centralizado -->
+    <div class="banner-text">
+      <h1>Catálogo ETAM</h1>
+      <p>Cadeiras e carpetes com conforto, estilo e qualidade.</p>
+      <a href="#produtos" class="banner-btn">Ver Produtos</a>
+    </div>
+
+    <!-- Setas -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
 </section>
 
-<section class="products">
-  <div id="variacoes" class="product-list"></div>
+<!-- Produtos -->
+<section id="produtos" class="products">
+  <h2>Nossos Produtos</h2>
+  <div class="product-list">
+    <div class="product-card">
+      <a href="produto.html?id=cadeira1">
+        <img src="heyheyehy.jpg" alt="Cadeira 1">
+        <h3>Cadeira 1</h3>
+        <p>Modelo moderno e confortável.</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="produto.html?id=cadeira2">
+        <img src="heyheyehy.jpg" alt="Cadeira 2">
+        <h3>Cadeira 2</h3>
+        <p>Perfeita para escritório.</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="produto.html?id=carpete1">
+        <img src="heyheyehy.jpg" alt="Carpete 1">
+        <h3>Carpete 1</h3>
+        <p>Durável e elegante para sua sala.</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="produto.html?id=carpete2">
+        <img src="heyheyehy.jpg" alt="Carpete 2">
+        <h3>Carpete 2</h3>
+        <p>Elegante e resistente.</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="produto.html?id=carpete3">
+        <img src="heyheyehy.jpg" alt="Carpete 3">
+        <h3>Carpete 3</h3>
+        <p>Design moderno e confortável.</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="produto.html?id=carpete3">
+        <img src="heyheyehy.jpg" alt="Carpete 3">
+        <h3>Carpete 3</h3>
+        <p>Design moderno e confortável.</p>
+      </a>
+    </div>
+    <!-- Adicione quantos cards quiser aqui, todos dentro de product-list -->
+  </div>
 </section>
 
-<section class="contact">
-  <h2>Gostou?</h2>
-  <p>Entre em contato pelo WhatsApp para mais informações.</p>
-  <a href="https://wa.me/55SEUNUMEROCOMDDD" target="_blank">Chamar no WhatsApp</a>
+<!-- Sobre -->
+<section id="sobre" class="about">
+  <h2>Sobre Nós</h2>
+  <p>Há mais de X anos, a ETAM oferece soluções em cadeiras e carpetes com foco em qualidade, design e conforto. Nosso propósito é transformar ambientes com produtos funcionais e sofisticados.</p>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="contact">
+  <h2>Entre em Contato</h2>
+  <p>Para mais informações ou solicitar um orçamento, fale conosco diretamente pelo WhatsApp.</p>
+  <a href="https://wa.me/55SEUNUMEROCOMDDD" target="_blank">💬 Nos chame no WhatsApp</a>
 </section>
 
 <footer>

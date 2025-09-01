@@ -1,3 +1,27 @@
+// Banner slideshow
+let current = 0;
+const slides = document.querySelectorAll('.banner-img');
+const total = slides.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % total;
+  slides[current].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  slides[current].classList.remove('active');
+  current = (current - 1 + total) % total;
+  slides[current].classList.add('active');
+});
+
+// Troca automática a cada 5s
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % total;
+  slides[current].classList.add('active');
+}, 5000);
+
 // Produtos e suas variações
 const produtos = {
   cadeira1: {
@@ -21,16 +45,8 @@ const produtos = {
     nome: "Carpete 1",
     desc: "Opções do Carpete 1.",
     variacoes: [
-      { img: "carpete1-opcao1.jpg", titulo: "Carpete 1 - Bege", texto: "Elegante e versátil." },
-      { img: "carpete1-opcao2.jpg", titulo: "Carpete 1 - Cinza", texto: "Combina com qualquer ambiente." }
-    ]
-  },
-  carpete2: {
-    nome: "Carpete 2",
-    desc: "Opções do Carpete 2.",
-    variacoes: [
-      { img: "carpete2-opcao1.jpg", titulo: "Carpete 2 - Clássico", texto: "Durável e resistente." },
-      { img: "carpete2-opcao2.jpg", titulo: "Carpete 2 - Premium", texto: "Acabamento de alto padrão." }
+      { img: "heyheyehy.jpg", titulo: "Carpete 1 - Bege", texto: "Elegante e versátil." },
+      { img: "heyheyehy.jpg", titulo: "Carpete 1 - Cinza", texto: "Combina com qualquer ambiente." }
     ]
   }
 };
@@ -41,12 +57,10 @@ const id = params.get("id");
 
 if (produtos[id]) {
   const produto = produtos[id];
-
   document.getElementById("produto-nome").textContent = produto.nome;
   document.getElementById("produto-desc").textContent = produto.desc;
 
   const variacoesDiv = document.getElementById("variacoes");
-
   produto.variacoes.forEach(v => {
     const card = document.createElement("div");
     card.classList.add("product-card");
