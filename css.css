@@ -51,23 +51,24 @@ nav a:hover {
   color: #fff;
 }
 
-/* Botão de orçamento */
-.orcamento-btn {
-  background-color: #e60000; /* vermelho */
-  color: #fff !important;
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 700;              /* fonte forte */
-  text-transform: uppercase;     /* tudo maiúsculo */
-  letter-spacing: 1px;           /* espaço entre letras */
-  font-size: 0.95em;
-  transition: background 0.3s, transform 0.2s;
+/* Botão de orçamento profissional */
+.solicite-orcamento-btn {
   display: inline-block;
+  background-color: #e60000; /* vermelho institucional */
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 0.9em;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;       /* impede quebra de linha */
+  letter-spacing: 0.5px;
+  transition: background 0.3s, box-shadow 0.2s;
 }
 
-.orcamento-btn:hover {
+.solicite-orcamento-btn:hover {
   background-color: #b30000;
-  transform: translateY(-2px);   /* efeito hover */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* Banner */
@@ -249,22 +250,17 @@ footer {
 footer p + p {
   margin-top: 8px;
 }
-/* Botão de orçamento profissional */
-.solicite-orcamento-btn {
-  display: inline-block;
-  background-color: #e60000; /* vermelho institucional */
-  color: #fff !important;
-  font-weight: 500;          /* menos pesado que bold */
-  font-size: 0.9em;          /* menor que padrão */
-  padding: 8px 18px;         /* mais compacto */
-  border-radius: 4px;        /* cantos sutis */
-  text-decoration: none;
-  text-transform: none;      /* mantém normal */
-  letter-spacing: 0.5px;
-  transition: background 0.3s, box-shadow 0.2s;
-}
 
-.solicite-orcamento-btn:hover {
-  background-color: #b30000; /* tom mais escuro no hover */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .solicite-orcamento-btn {
+    width: 100%;         /* ocupa toda a largura */
+    text-align: center;  /* centraliza */
+    font-size: 1em;
+  }
 }
